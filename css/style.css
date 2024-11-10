@@ -1,0 +1,79 @@
+:root{
+
+--fuenteHeading: 'PT Sans', sans-serif;
+--fuenteParrafos: 'Open Sans', sans-serif;
+
+--primario:#784D3C;
+--blanco:#ffffff;
+--negro: #000000;
+
+
+}
+
+html{
+
+box-sizing: border-box; /*para que el border, padding, etc no afecte el ancho de los elementos*/
+font-size: 62.5%; /*para que 1 rem sea igual que 10px */
+
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /*hereda del padre que es html pero si lo pones en otro selector va a heredar del otro por eso es más dinámico*/
+  }
+
+  body{
+
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2; /*interlineado*/
+  }
+
+  /*Globales*/
+
+  .contenedor{
+
+    width: 90%;
+    max-width: 120rem; /*que el contenido se agrande hasta el 90% pero si supera los 120rem que se quede en 120rem*/
+    margin: 0 auto; /*lo centra*/
+
+  }
+  a{
+
+    text-decoration: none; /*a los enlaces les saca el subrayado*/
+  }
+
+  h1,h2,h3,h4{
+
+    font-family: var(--fuenteHeading);
+  }
+
+  h1{
+
+    font-size: 4.8rem;
+  }
+  h2{
+    font-size: 4rem;
+  }
+  h3{
+    font-size: 3.2rem;
+  }
+  h4{
+    font-size: 2.8rem;
+  }
+
+  img{
+    max-width: 100%;
+  }
+
+  /*Utilidades*/
+
+  .no-margin{
+    margin: 0;
+  }
+  .no-padding{
+    padding: 0;
+  }
+  .centrar-texto{
+
+    text-align: center;
+  }
