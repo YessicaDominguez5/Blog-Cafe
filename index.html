@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página web de blog de café">
     <title>BlogDeCafé</title>
+
+    <!--Prefetch-->
+    <link rel="prefetch" href="nosotros.html" as="document"> <!--precarga la 2da pantalla a la que el usuario iría-->
+
+    <!--Preload-->
+    <link rel="preload" href="css/normalize.css" as="style">
     <link rel="stylesheet" href="css/normalize.css"> <!--vincular la hoja normalize.css-->
 
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Open+Sans:ital@0;1&family=PT+Sans:wght@400;700&family=Playwrite+GB+S&display=swap" crossorigin="crossorigin" as="font">
     <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Open+Sans:ital@0;1&family=PT+Sans:wght@400;700&family=Playwrite+GB+S&display=swap" rel="stylesheet"> <!--google fonts-->
 
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css"> <!--vincular la hoja styles.css-->
+
+    <link rel="preload" href="img/blog1.jpg" as="image">
 </head>
 <body>
     <header class="header">
@@ -43,7 +54,19 @@
         <article class="entrada">
 
             <div class="entrada__imagen"> <!--Entrada 1-->
-                <img src="img/blog1.jpg" alt="imagen blog">
+
+                <picture>
+                    <source loading="lazy"  srcset="img/blog1.webp" type="image/webp"> <!--si el navegador lo soporta te carga 
+                    la imagen .webp que es menos pesada, sino carga la imagen común con el img-->
+
+
+                    <img loading="lazy" src="img/blog1.jpg" alt="imagen blog">
+                    <!--loading lazy carga las imagenes recién cuando llegas a esa parte de la pantalla 
+                    y no antes (en chrome todavía no funciona)-->
+
+                </picture> <!--picture permite cargar diferentes formatos-->
+
+
             </div>
             <div class="entrada_contenido">
                 <h4 class="no-margin">Tipos de Grano de Café</h4>
@@ -55,7 +78,17 @@
         <article class="entrada">
 
             <div class="entrada__imagen">  <!--Entrada 2-->
-                <img src="img/blog2.jpg" alt="imagen blog">
+
+                <picture>
+                    <source loading="lazy"  srcset="img/blog2.webp" type="image/webp"> <!--si el navegador lo soporta te carga 
+                    la imagen .webp que es menos pesada, sino carga la imagen común con el img-->
+
+                    <img loading="lazy" src="img/blog2.jpg" alt="imagen blog">
+
+                </picture>
+
+
+
             </div>
             <div class="entrada_contenido">
                 <h4 class="no-margin">Deliciosas Recetas de Café</h4>
@@ -67,7 +100,18 @@
         <article class="entrada">
 
             <div class="entrada__imagen">  <!--Entrada 3-->
-                <img src="img/blog3.jpg" alt="imagen blog">
+
+                <picture>
+                    <source loading="lazy" srcset="img/blog3.webp" type="image/webp"> <!--si el navegador lo soporta te carga 
+                    la imagen .webp que es menos pesada, sino carga la imagen común con el img-->
+
+                    <img loading="lazy" src="img/blog3.jpg" alt="imagen blog">
+
+
+                </picture>
+
+
+
             </div>
             <div class="entrada_contenido">
                 <h4 class="no-margin">Beneficios del Café</h4>
@@ -125,6 +169,7 @@
     </div>
 
 </footer>
+<script src="js/modernizr.js"></script>
 
 </body>
 </html>

@@ -84,9 +84,20 @@ font-size: 62.5%; /*para que 1 rem sea igual que 10px */
   }
   /*Header*/
 
+  .webp .header{
+
+    background-image: url(../img/banner.webp);
+    /*para que precargue la imagen con webp que es menos pesada si el navegador lo soporta sino con jpg
+    Esto es para Css usando la Librería Modernizr de js. Si la imagén está en html se usa el <picture>*/
+  }
+  .no-webp .header{
+    background-image: url(../img/banner.jpg);
+
+  }
+
   .header{
 
-    background-image: url(../img/banner.jpg);
+    
     height: 60rem;
     background-size: cover; /*que ocupe todo el largo de la pantalla*/
     background-repeat: no-repeat;
