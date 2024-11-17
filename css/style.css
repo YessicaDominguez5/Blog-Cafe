@@ -104,6 +104,8 @@ font-size: 62.5%; /*para que 1 rem sea igual que 10px */
   .barra{
 
     padding-top: 4rem;
+   
+    
   }
  @media (min-width: 768px){
     
@@ -142,12 +144,17 @@ font-size: 62.5%; /*para que 1 rem sea igual que 10px */
   color: var(--blanco);
 }
 
+.navegacion{
+
+  margin-top: 4rem;
+}
 @media (min-width: 768px){
      
   .navegacion{
 
     display: flex;
     gap:2rem;
+    margin-top: 0;
 
   }
 }
@@ -189,8 +196,13 @@ font-size: 62.5%; /*para que 1 rem sea igual que 10px */
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 2rem;
+  border: none;
  
 
+}
+
+.boton:hover{
+  cursor: pointer;
 }
 
 @media (min-width: 768px){
@@ -250,5 +262,120 @@ font-weight: 400;
 
 background-color: var(--negro);
 padding-bottom: 3rem;
+
+}
+
+/*Sobre Nosotros*/
+
+@media (min-width: 768px){
+  
+  /*
+    Sobre Nosotros con FlexBox  
+  .sobre-nosotros{
+  
+  display: flex;
+  gap: 2rem;
+
+  }
+
+  .sobre-nosotros__imagen,
+  .sobre-nosotros__texto{
+
+    flex-basis: 50%;
+
+  }*/
+
+  /*Sobre Nosotros con Grid*/
+  .sobre-nosotros{
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    margin: 4rem;
+  }
+  .sobre-nosotros__texto{
+
+    font-family: var(--fuenteParrafos);
+    font-size: 1.5rem;
+  }
+}
+/*Cursos*/
+
+.curso{
+
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--gris);
+}
+.curso:last-of-type{
+
+  border: none;
+}
+
+@media (min-width: 768px){
+
+  .curso{
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+
+
+  }
+     
+}
+
+/*Entrada Blog*/
+
+@media (min-width: 768px){
+     .entrada-blog{
+
+        width: 80%;
+        max-width: 120rem;
+        margin: 0 auto; /*lo centra*/
+    
+      
+
+     }
+}
+
+/*Contacto*/
+
+.contacto-bg{
+
+  background-image: url(../img/contacto.jpg);
+  height: 40rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.formulario{
+
+  /*para que el formulario este arriba de la foto (una parte)*/
+  background-color: var(--blanco);
+  margin: -5rem auto 0 auto;
+  width: 95%;
+  padding: 5rem;
+
+}
+.campo{
+
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+.campo__label{
+  flex: 0 0 9rem; /*no se agranda ni se achica queda fijo en 9rem*/
+  text-align: right;
+
+}
+.campo__field{
+
+  flex: 1; /*toma el ancho disponible que queda que deja la label*/
+  border: 1px solid var(--gris);
+
+}
+.campo__field--textarea{
+
+height: 20rem;
 
 }
